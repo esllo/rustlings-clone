@@ -239,38 +239,6 @@ Data Types -> The Tuple Type section of the book:
 https://doc.rust-lang.org/book/ch03-02-data-types.html#the-tuple-type
 Now you have another tool in your toolbox!"""
 
-# VECS
-
-[[exercises]]
-name = "vecs1"
-path = "exercises/vecs/vecs1.rs"
-mode = "test"
-hint = """
-In Rust, there are two ways to define a Vector.
-1. One way is to use the `Vec::new()` function to create a new vector
-  and fill it with the `push()` method.
-2. The second way, which is simpler is to use the `vec![]` macro and
-  define your elements inside the square brackets.
-Check this chapter: https://doc.rust-lang.org/stable/book/ch08-01-vectors.html
-of the Rust book to learn more.
-"""
-
-[[exercises]]
-name = "vecs2"
-path = "exercises/vecs/vecs2.rs"
-mode = "test"
-hint = """
-Hint 1: `i` is each element from the Vec as they are being iterated. Can you try
-multiplying this?
-
-Hint 2: For the first function, there's a way to directly access the numbers stored
-in the Vec, using the * dereference operator. You can both access and write to the
-number that way.
-
-After you've completed both functions, decide for yourself which approach you like
-better. What do you think is the more commonly used pattern under Rust developers?
-"""
-
 # MOVE SEMANTICS
 
 [[exercises]]
@@ -418,6 +386,69 @@ and then create a match expression in `process()`.
 Note that you need to deconstruct some message variants
 in the match expression to get value in the variant."""
 
+# MODULES
+
+[[exercises]]
+name = "modules1"
+path = "exercises/modules/modules1.rs"
+mode = "compile"
+hint = """
+Everything is private in Rust by default-- but there's a keyword we can use
+to make something public! The compiler error should point to the thing that
+needs to be public."""
+
+[[exercises]]
+name = "modules2"
+path = "exercises/modules/modules2.rs"
+mode = "compile"
+hint = """
+The delicious_snacks module is trying to present an external interface that is
+different than its internal structure (the `fruits` and `veggies` modules and
+associated constants). Complete the `use` statements to fit the uses in main and
+find the one keyword missing for both constants."""
+
+[[exercises]]
+name = "modules3"
+path = "exercises/modules/modules3.rs"
+mode = "compile"
+hint = """
+UNIX_EPOCH and SystemTime are declared in the std::time module. Add a use statement
+for these two to bring them into scope. You can use nested paths or the glob
+operator to bring these two in using only one line."""
+
+# VECS
+
+[[exercises]]
+name = "vecs1"
+path = "exercises/vecs/vecs1.rs"
+mode = "test"
+hint = """
+In Rust, there are two ways to define a Vector.
+1. One way is to use the `Vec::new()` function to create a new vector
+  and fill it with the `push()` method.
+2. The second way, which is simpler is to use the `vec![]` macro and
+  define your elements inside the square brackets.
+Check this chapter: https://doc.rust-lang.org/stable/book/ch08-01-vectors.html
+of the Rust book to learn more.
+"""
+
+[[exercises]]
+name = "vecs2"
+path = "exercises/vecs/vecs2.rs"
+mode = "test"
+hint = """
+Hint 1: `i` is each element from the Vec as they are being iterated. Can you try
+multiplying this?
+
+Hint 2: For the first function, there's a way to directly access the numbers stored
+in the Vec, using the * dereference operator. You can both access and write to the
+number that way.
+
+After you've completed both functions, decide for yourself which approach you like
+better. What do you think is the more commonly used pattern under Rust developers?
+"""
+
+
 # STRINGS
 
 [[exercises]]
@@ -457,36 +488,6 @@ name = "strings4"
 path = "exercises/strings/strings4.rs"
 mode = "compile"
 hint = "No hints this time ;)"
-
-# MODULES
-
-[[exercises]]
-name = "modules1"
-path = "exercises/modules/modules1.rs"
-mode = "compile"
-hint = """
-Everything is private in Rust by default-- but there's a keyword we can use
-to make something public! The compiler error should point to the thing that
-needs to be public."""
-
-[[exercises]]
-name = "modules2"
-path = "exercises/modules/modules2.rs"
-mode = "compile"
-hint = """
-The delicious_snacks module is trying to present an external interface that is
-different than its internal structure (the `fruits` and `veggies` modules and
-associated constants). Complete the `use` statements to fit the uses in main and
-find the one keyword missing for both constants."""
-
-[[exercises]]
-name = "modules3"
-path = "exercises/modules/modules3.rs"
-mode = "compile"
-hint = """
-UNIX_EPOCH and SystemTime are declared in the std::time module. Add a use statement
-for these two to bring them into scope. You can use nested paths or the glob
-operator to bring these two in using only one line."""
 
 # HASHMAPS
 
@@ -528,41 +529,6 @@ name = "quiz2"
 path = "exercises/quiz2.rs"
 mode = "test"
 hint = "No hints this time ;)"
-
-# OPTIONS
-
-[[exercises]]
-name = "options1"
-path = "exercises/options/options1.rs"
-mode = "test"
-hint = """
-Options can have a Some value, with an inner value, or a None value, without an inner value.
-There's multiple ways to get at the inner value, you can use unwrap, or pattern match. Unwrapping
-is the easiest, but how do you do it safely so that it doesn't panic in your face later?"""
-
-[[exercises]]
-name = "options2"
-path = "exercises/options/options2.rs"
-mode = "test"
-hint = """
-check out:
-https://doc.rust-lang.org/rust-by-example/flow_control/if_let.html
-https://doc.rust-lang.org/rust-by-example/flow_control/while_let.html
-
-Remember that Options can be stacked in if let and while let.
-For example: Some(Some(variable)) = variable2
-Also see Option::flatten
-"""
-
-[[exercises]]
-name = "options3"
-path = "exercises/options/options3.rs"
-mode = "compile"
-hint = """
-The compiler says a partial move happened in the `match`
-statement. How can this be avoided? The compiler shows the correction
-needed. After making the correction as suggested by the compiler, do
-read: https://doc.rust-lang.org/std/keyword.ref.html"""
 
 # ERROR HANDLING
 
@@ -679,6 +645,41 @@ Maybe we could update the explicit references to this data type somehow?
 If you are still stuck https://doc.rust-lang.org/stable/book/ch10-01-syntax.html#in-method-definitions
 """
 
+# OPTIONS
+
+[[exercises]]
+name = "options1"
+path = "exercises/options/options1.rs"
+mode = "test"
+hint = """
+Options can have a Some value, with an inner value, or a None value, without an inner value.
+There's multiple ways to get at the inner value, you can use unwrap, or pattern match. Unwrapping
+is the easiest, but how do you do it safely so that it doesn't panic in your face later?"""
+
+[[exercises]]
+name = "options2"
+path = "exercises/options/options2.rs"
+mode = "test"
+hint = """
+check out:
+https://doc.rust-lang.org/rust-by-example/flow_control/if_let.html
+https://doc.rust-lang.org/rust-by-example/flow_control/while_let.html
+
+Remember that Options can be stacked in if let and while let.
+For example: Some(Some(variable)) = variable2
+Also see Option::flatten
+"""
+
+[[exercises]]
+name = "options3"
+path = "exercises/options/options3.rs"
+mode = "compile"
+hint = """
+The compiler says a partial move happened in the `match`
+statement. How can this be avoided? The compiler shows the correction
+needed. After making the correction as suggested by the compiler, do
+read: https://doc.rust-lang.org/std/keyword.ref.html"""
+
 # TRAITS
 
 [[exercises]]
@@ -746,6 +747,33 @@ hint = """
 To find the best solution to this challenge you're going to need to think back to your
 knowledge of traits, specifically Trait Bound Syntax -  you may also need this: `use std::fmt::Display;`."""
 
+# LIFETIMES
+
+[[exercises]]
+name = "lifetimes1"
+path = "exercises/lifetimes/lifetimes1.rs"
+mode = "compile"
+hint = """
+Let the compiler guide you. Also take a look at the book if you need help:
+https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html"""
+
+[[exercises]]
+name = "lifetimes2"
+path = "exercises/lifetimes/lifetimes2.rs"
+mode = "compile"
+hint = """
+Remember that the generic lifetime 'a will get the concrete lifetime that is equal to the smaller of the lifetimes of x and y.
+You can take at least two paths to achieve the desired result while keeping the inner block:
+1. Move the string2 declaration to make it live as long as string1 (how is result declared?)
+2. Move println! into the inner block"""
+
+[[exercises]]
+name = "lifetimes3"
+path = "exercises/lifetimes/lifetimes3.rs"
+mode = "compile"
+hint = """
+If you use a lifetime annotation in a struct's fields, where else does it need to be added?"""
+
 # TESTS
 
 [[exercises]]
@@ -777,33 +805,6 @@ hint = """
 You can call a function right where you're passing arguments to `assert!` -- so you could do
 something like `assert!(having_fun())`. If you want to check that you indeed get false, you
 can negate the result of what you're doing using `!`, like `assert!(!having_fun())`."""
-
-# LIFETIMES
-
-[[exercises]]
-name = "lifetimes1"
-path = "exercises/lifetimes/lifetimes1.rs"
-mode = "compile"
-hint = """
-Let the compiler guide you. Also take a look at the book if you need help:
-https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html"""
-
-[[exercises]]
-name = "lifetimes2"
-path = "exercises/lifetimes/lifetimes2.rs"
-mode = "compile"
-hint = """
-Remember that the generic lifetime 'a will get the concrete lifetime that is equal to the smaller of the lifetimes of x and y.
-You can take at least two paths to achieve the desired result while keeping the inner block:
-1. Move the string2 declaration to make it live as long as string1 (how is result declared?)
-2. Move println! into the inner block"""
-
-[[exercises]]
-name = "lifetimes3"
-path = "exercises/lifetimes/lifetimes3.rs"
-mode = "compile"
-hint = """
-If you use a lifetime annotation in a struct's fields, where else does it need to be added?"""
 
 # STANDARD LIBRARY TYPES
 
