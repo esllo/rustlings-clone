@@ -14,11 +14,11 @@
 | strings                | §8.2                |
 | hashmaps               | §8.3                |
 | error_handling         | §9                  |
-| options                | §10.1               |
 | generics               | §10                 |
+| options                | §10.1               |
 | traits                 | §10.2               |
-| tests                  | §11.1               |
 | lifetimes              | §10.3               |
+| tests                  | §11.1               |
 | iterators              | §13.2-4             |
 | threads                | §16.1-3             |
 | smart_pointers         | §15, §16.3          |
